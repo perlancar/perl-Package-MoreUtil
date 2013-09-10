@@ -1,4 +1,4 @@
-#!perl -T
+#!perl
 
 use 5.010;
 use strict;
@@ -9,7 +9,7 @@ use SHARYANTO::Package::Util qw(
                                    list_package_contents
                                    list_subpackages
                            );
-use Test::More 0.96;
+use Test::More 0.98;
 
 BEGIN { ok(!package_exists("cps61kDkaNlLTrdXC91"), "package_exists 1"); }
 
