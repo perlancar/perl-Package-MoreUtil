@@ -116,6 +116,8 @@ sub list_subpackages {
 =head1 DESCRIPTION
 
 
+=head1 FUNCTIONS
+
 =head2 package_exists($name) => BOOL
 
 Return true if package "exists". By "exists", it means that the package has been
