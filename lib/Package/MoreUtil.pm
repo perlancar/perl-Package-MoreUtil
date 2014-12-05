@@ -1,4 +1,7 @@
-package SHARYANTO::Package::Util;
+package Package::MoreUtil;
+
+# DATE
+# VERSION
 
 use 5.010001;
 use strict;
@@ -11,8 +14,6 @@ our @EXPORT_OK = qw(
                        list_package_contents
                        list_subpackages
                );
-
-# VERSION
 
 sub package_exists {
     no strict 'refs';
@@ -101,7 +102,7 @@ sub list_subpackages {
 
 =head1 SYNOPSIS
 
- use SHARYANTO::Package::Util qw(
+ use Package::MoreUtil qw(
      package_exists
      list_package_contents
      list_subpackages
@@ -165,8 +166,8 @@ You can recurse from the top, e.g.:
 
 =head1 SEE ALSO
 
-L<SHARYANTO>
-
 L<perlmod>
+
+L<Package::Util> (currently empty/placeholder at the time of this writing)
 
 =cut

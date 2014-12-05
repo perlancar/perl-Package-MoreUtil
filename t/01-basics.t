@@ -4,11 +4,11 @@ use 5.010;
 use strict;
 use warnings;
 
-use SHARYANTO::Package::Util qw(
-                                   package_exists
-                                   list_package_contents
-                                   list_subpackages
-                           );
+use Package::MoreUtil qw(
+                            package_exists
+                            list_package_contents
+                            list_subpackages
+                    );
 use Test::More 0.98;
 
 BEGIN { ok(!package_exists("cps61kDkaNlLTrdXC91"), "package_exists 1"); }

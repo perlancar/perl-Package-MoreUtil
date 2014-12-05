@@ -1,4 +1,9 @@
-Revision history for SHARYANTO-Package-Util
+Revision history for Package-MoreUtil
+
+0.57    2014-12-05 (PERLANCAR) (unreleased)
+
+        - Rename dist/module from SHARYANTO-Package-Util to Package-MoreUtil.
+
 
 0.56    2013-09-10 (SHARYANTO)
 
