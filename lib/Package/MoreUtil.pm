@@ -12,6 +12,7 @@ our @ISA = qw(Exporter);
 our @EXPORT_OK = qw(
                        package_exists
                        list_package_contents
+                       list_package_subs
                        list_subpackages
                );
 
@@ -74,6 +75,26 @@ sub list_package_contents {
     %res;
 }
 
+# XXX incomplete/improper too?
+sub list_package_subs {
+    no strict 'refs';
+
+    my $pkg = shift;
+
+    return () unless !length($pkg) || package_exists($pkg);
+    my $symtbl = \%{$pkg . "::"};
+
+    my @res;
+    while (my ($k, $v) = each %$symtbl) {
+        next if $k =~ /::$/; # subpackage
+        if (defined *$v{CODE}) {
+            push @res, $k;
+        }
+    }
+
+    @res;
+}
+
 sub list_subpackages {
     no strict 'refs';
 
@@ -107,11 +128,13 @@ sub list_subpackages {
  use Package::MoreUtil qw(
      package_exists
      list_package_contents
+     list_package_subs
      list_subpackages
  );
 
  print "Package Foo::Bar exists" if package_exists("Foo::Bar");
  my %content   = list_package_contents("Foo::Bar");
+ my @subnames  = list_package_subs("Foo::Bar");
  my @subpkg    = list_subpackages("Foo::Bar");
  my @allsubpkg = list_subpackages("Foo::Bar", 1); # recursive
 
@@ -143,6 +166,10 @@ Return a hash containing package contents. For example:
  )
 
 This module won't list subpackages. Use list_subpackages() for that.
+
+=head2 list_package_subs($pkg) => @subnames
+
+Return a list containing subroutine names in package C<$pkg>.
 
 =head2 list_subpackages($name[, $recursive]) => @res
 
