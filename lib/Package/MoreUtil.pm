@@ -20,7 +20,9 @@ sub package_exists {
 
     my $pkg = shift;
 
-    return unless $pkg =~ /\A\w+(::\w+)*\z/;
+    # opt
+    #return unless $pkg =~ /\A\w+(::\w+)*\z/;
+
     if ($pkg =~ s/::(\w+)\z//) {
         return !!${$pkg . "::"}{$1 . "::"};
     } else {
