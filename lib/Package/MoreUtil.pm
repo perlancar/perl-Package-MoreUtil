@@ -141,6 +141,9 @@ sub list_subpackages {
 
 =head1 DESCRIPTION
 
+B<DEPRECATION NOTICE:> This module is deprecated in favor of L<Package::Stash>
+and L<Package::Util::Lite>.
+
 
 =head1 FUNCTIONS
 
@@ -194,6 +197,10 @@ You can recurse from the top, e.g.:
 
 
 =head1 SEE ALSO
+
+L<Package::Stash>
+
+L<Package::Util::Lite>
 
 L<perlmod>
 
