@@ -3,7 +3,7 @@
 use 5.010;
 use strict;
 use warnings;
-use Test::More 0.98;
+use Test::More;
 
 use Package::MoreUtil qw(
                             package_exists
@@ -24,6 +24,9 @@ sub A  {}
 #our *C;
 
 package main;
+
+# just test that we don't die
+ok ( list_package_subs("main") );
 
 ok( package_exists("cps61kDkaNlLTrdXC91"), "package_exists 1b");
 

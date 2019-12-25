@@ -86,8 +86,9 @@ sub list_package_subs {
 
     my @res;
     while (my ($k, $v) = each %$symtbl) {
-        next if $k =~ /::$/; # subpackage
-        if (defined *$v{CODE}) {
+        if (
+            ref $v eq 'CODE' || # perl >= 5.22
+                defined *$v{CODE}) {
             push @res, $k;
         }
     }
