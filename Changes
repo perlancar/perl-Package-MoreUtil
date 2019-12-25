@@ -1,3 +1,8 @@
+0.592   2019-12-25  Released-By: PERLANCAR; Urgency: high
+
+	- [bugfix] Avoid failure in perl >= 5.22.
+
+
 0.591   2019-01-06  Released-By: PERLANCAR
 
 	- No functional changes.
