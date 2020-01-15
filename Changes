@@ -23,7 +23,7 @@
 	- Rename module/dist SHARYANTO-Package-Util -> Package-MoreUtil.
 
 
-0.57    2014-12-05 (PERLANCAR)  Released-By: unreleased
+0.57    2014-12-05  Released-By: PERLANCAR; Released: no
 
         - Rename dist/module from SHARYANTO-Package-Util to Package-MoreUtil.
 
@@ -32,3 +32,4 @@
 
         - No functional changes. Split from SHARYANTO-Utils to minimize
           dependencies (I'm trying to make Text::ANSITable work under Windows).
+
